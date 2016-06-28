@@ -14,7 +14,7 @@ let bodyParser = require('body-parser');
 //// mongoose
 let mongoose = require('mongoose');
 
-let mongoUrl = 'mongodb://localhost/testdb';
+let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/testdb';
 
 mongoose.connect(mongoUrl, err => {
   console.log(err || `Server listening on port ${PORT}`);
